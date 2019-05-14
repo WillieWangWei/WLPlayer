@@ -1,0 +1,14 @@
+platform :ios, '12.0'
+inhibit_all_warnings!
+
+target 'WLPlayer' do
+
+  use_frameworks!
+  
+  pod 'Fabric'
+  pod 'SnapKit'
+  pod 'Crashlytics'
+  pod 'SwiftyBeaver'
+  pod 'SVProgressHUD'
+
+end
