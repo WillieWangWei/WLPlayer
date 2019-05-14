@@ -3,26 +3,71 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36897ED7228B09A500221470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897ED6228B09A500221470 /* AppDelegate.swift */; };
-		36897ED9228B09A500221470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897ED8228B09A500221470 /* ViewController.swift */; };
-		36897EDC228B09A500221470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36897EDA228B09A500221470 /* Main.storyboard */; };
+		36897ED7228B09A500221470 /* WPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897ED6228B09A500221470 /* WPAppDelegate.swift */; };
 		36897EDE228B09A500221470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36897EDD228B09A500221470 /* Assets.xcassets */; };
-		36897EE1228B09A500221470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36897EDF228B09A500221470 /* LaunchScreen.storyboard */; };
+		36897EF8228B0E1500221470 /* WLTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EEC228B0E1500221470 /* WLTableViewDelegate.swift */; };
+		36897EF9228B0E1500221470 /* WLTableViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EED228B0E1500221470 /* WLTableViewCellData.swift */; };
+		36897EFA228B0E1500221470 /* WLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EEF228B0E1500221470 /* WLTableView.swift */; };
+		36897EFB228B0E1500221470 /* WLTableViewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF0228B0E1500221470 /* WLTableViewOverlay.swift */; };
+		36897EFC228B0E1500221470 /* WLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF1228B0E1500221470 /* WLTableViewCell.swift */; };
+		36897EFD228B0E1500221470 /* WLUIEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF3228B0E1500221470 /* WLUIEventDelegate.swift */; };
+		36897EFE228B0E1500221470 /* UIView+WLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF5228B0E1500221470 /* UIView+WLKit.swift */; };
+		36897EFF228B0E1500221470 /* UIColor+WLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF6228B0E1500221470 /* UIColor+WLKit.swift */; };
+		36897F00228B0E1500221470 /* String+WLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EF7228B0E1500221470 /* String+WLKit.swift */; };
+		36897F11228B0EF700221470 /* WPMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F0B228B0EF700221470 /* WPMainTabBarController.swift */; };
+		36897F33228B0F1000221470 /* WPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F15228B0F1000221470 /* WPBaseViewController.swift */; };
+		36897F34228B0F1000221470 /* WPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F16228B0F1000221470 /* WPBaseNavigationController.swift */; };
+		36897F35228B0F1000221470 /* SwiftyBeaver+WP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F18228B0F1000221470 /* SwiftyBeaver+WP.swift */; };
+		36897F36228B0F1000221470 /* UIViewController+WP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F19228B0F1000221470 /* UIViewController+WP.swift */; };
+		36897F37228B0F1000221470 /* UIColor+WP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F1A228B0F1000221470 /* UIColor+WP.swift */; };
+		36897F3B228B0F1000221470 /* HGConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F23228B0F1000221470 /* HGConst.swift */; };
+		36897F3C228B0F1000221470 /* HGSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F25228B0F1000221470 /* HGSandbox.swift */; };
+		36897F3E228B0F1000221470 /* HGPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F29228B0F1000221470 /* HGPlayerComponent.swift */; };
+		36897F3F228B0F1000221470 /* HGPlayerControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F2C228B0F1000221470 /* HGPlayerControlPanel.swift */; };
+		36897F40228B0F1000221470 /* HGPlayerControlPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36897F2D228B0F1000221470 /* HGPlayerControlPanel.xib */; };
+		36897F41228B0F1000221470 /* HGRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F2F228B0F1000221470 /* HGRecommendCell.swift */; };
+		36897F42228B0F1000221470 /* HGPlayerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F30228B0F1000221470 /* HGPlayerOverlay.swift */; };
+		36897F43228B0F1000221470 /* HGRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36897F31228B0F1000221470 /* HGRecommendCell.xib */; };
+		36897F44228B0F1000221470 /* HGPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F32228B0F1000221470 /* HGPlayerManager.swift */; };
+		36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F4F228B138B00221470 /* WPHomeViewController.swift */; };
 		8906B98E678E38D1370E9378 /* Pods_WLPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36897ED3228B09A500221470 /* WLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36897ED6228B09A500221470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36897ED8228B09A500221470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36897EDB228B09A500221470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36897ED6228B09A500221470 /* WPAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPAppDelegate.swift; sourceTree = "<group>"; };
 		36897EDD228B09A500221470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		36897EE0228B09A500221470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		36897EE2228B09A500221470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36897EE2228B09A500221470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		36897EEC228B0E1500221470 /* WLTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableViewDelegate.swift; sourceTree = "<group>"; };
+		36897EED228B0E1500221470 /* WLTableViewCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableViewCellData.swift; sourceTree = "<group>"; };
+		36897EEF228B0E1500221470 /* WLTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableView.swift; sourceTree = "<group>"; };
+		36897EF0228B0E1500221470 /* WLTableViewOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableViewOverlay.swift; sourceTree = "<group>"; };
+		36897EF1228B0E1500221470 /* WLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableViewCell.swift; sourceTree = "<group>"; };
+		36897EF3228B0E1500221470 /* WLUIEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLUIEventDelegate.swift; sourceTree = "<group>"; };
+		36897EF5228B0E1500221470 /* UIView+WLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+WLKit.swift"; sourceTree = "<group>"; };
+		36897EF6228B0E1500221470 /* UIColor+WLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WLKit.swift"; sourceTree = "<group>"; };
+		36897EF7228B0E1500221470 /* String+WLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+WLKit.swift"; sourceTree = "<group>"; };
+		36897F0B228B0EF700221470 /* WPMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPMainTabBarController.swift; sourceTree = "<group>"; };
+		36897F15228B0F1000221470 /* WPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPBaseViewController.swift; sourceTree = "<group>"; };
+		36897F16228B0F1000221470 /* WPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPBaseNavigationController.swift; sourceTree = "<group>"; };
+		36897F18228B0F1000221470 /* SwiftyBeaver+WP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+WP.swift"; sourceTree = "<group>"; };
+		36897F19228B0F1000221470 /* UIViewController+WP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+WP.swift"; sourceTree = "<group>"; };
+		36897F1A228B0F1000221470 /* UIColor+WP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WP.swift"; sourceTree = "<group>"; };
+		36897F23228B0F1000221470 /* HGConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGConst.swift; sourceTree = "<group>"; };
+		36897F25228B0F1000221470 /* HGSandbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGSandbox.swift; sourceTree = "<group>"; };
+		36897F29228B0F1000221470 /* HGPlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGPlayerComponent.swift; sourceTree = "<group>"; };
+		36897F2C228B0F1000221470 /* HGPlayerControlPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGPlayerControlPanel.swift; sourceTree = "<group>"; };
+		36897F2D228B0F1000221470 /* HGPlayerControlPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HGPlayerControlPanel.xib; sourceTree = "<group>"; };
+		36897F2F228B0F1000221470 /* HGRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGRecommendCell.swift; sourceTree = "<group>"; };
+		36897F30228B0F1000221470 /* HGPlayerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGPlayerOverlay.swift; sourceTree = "<group>"; };
+		36897F31228B0F1000221470 /* HGRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HGRecommendCell.xib; sourceTree = "<group>"; };
+		36897F32228B0F1000221470 /* HGPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGPlayerManager.swift; sourceTree = "<group>"; };
+		36897F4A228B122600221470 /* WLPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WLPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		36897F4F228B138B00221470 /* WPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHomeViewController.swift; sourceTree = "<group>"; };
 		38908A87B9442792D6618DDB /* Pods-WLPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLPlayer.debug.xcconfig"; path = "Target Support Files/Pods-WLPlayer/Pods-WLPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74450B78A072D7E69BD4283B /* Pods-WLPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLPlayer.release.xcconfig"; path = "Target Support Files/Pods-WLPlayer/Pods-WLPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,10 +88,11 @@
 		36897ECA228B09A500221470 = {
 			isa = PBXGroup;
 			children = (
-				36897ED5228B09A500221470 /* WLPlayer */,
-				36897ED4228B09A500221470 /* Products */,
-				CC64EDE7352A976C23B0FE38 /* Pods */,
 				7F52BE69E61A4093A606E934 /* Frameworks */,
+				CC64EDE7352A976C23B0FE38 /* Pods */,
+				36897ED4228B09A500221470 /* Products */,
+				36897EE8228B0E1500221470 /* WLKit */,
+				36897ED5228B09A500221470 /* WLPlayer */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,14 +107,212 @@
 		36897ED5228B09A500221470 /* WLPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				36897ED6228B09A500221470 /* AppDelegate.swift */,
-				36897ED8228B09A500221470 /* ViewController.swift */,
-				36897EDA228B09A500221470 /* Main.storyboard */,
-				36897EDD228B09A500221470 /* Assets.xcassets */,
-				36897EDF228B09A500221470 /* LaunchScreen.storyboard */,
-				36897EE2228B09A500221470 /* Info.plist */,
+				36897F01228B0EF700221470 /* Class */,
+				36897F12228B0F1000221470 /* Common */,
+				36897F45228B0F1F00221470 /* Support Files */,
 			);
 			path = WLPlayer;
+			sourceTree = "<group>";
+		};
+		36897EE8228B0E1500221470 /* WLKit */ = {
+			isa = PBXGroup;
+			children = (
+				36897EE9228B0E1500221470 /* UI */,
+				36897EF4228B0E1500221470 /* Extension */,
+			);
+			path = WLKit;
+			sourceTree = "<group>";
+		};
+		36897EE9228B0E1500221470 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				36897EEA228B0E1500221470 /* TableView */,
+				36897EF2228B0E1500221470 /* Protocol */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		36897EEA228B0E1500221470 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				36897EEB228B0E1500221470 /* Protocol */,
+				36897EEE228B0E1500221470 /* View */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		36897EEB228B0E1500221470 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				36897EEC228B0E1500221470 /* WLTableViewDelegate.swift */,
+				36897EED228B0E1500221470 /* WLTableViewCellData.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		36897EEE228B0E1500221470 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36897EEF228B0E1500221470 /* WLTableView.swift */,
+				36897EF0228B0E1500221470 /* WLTableViewOverlay.swift */,
+				36897EF1228B0E1500221470 /* WLTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36897EF2228B0E1500221470 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				36897EF3228B0E1500221470 /* WLUIEventDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		36897EF4228B0E1500221470 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				36897EF5228B0E1500221470 /* UIView+WLKit.swift */,
+				36897EF6228B0E1500221470 /* UIColor+WLKit.swift */,
+				36897EF7228B0E1500221470 /* String+WLKit.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		36897F01228B0EF700221470 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				36897F4E228B137400221470 /* Home */,
+				36897F0A228B0EF700221470 /* Main */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		36897F0A228B0EF700221470 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36897F0B228B0EF700221470 /* WPMainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		36897F12228B0F1000221470 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				36897F13228B0F1000221470 /* UI */,
+				36897F17228B0F1000221470 /* Extension */,
+				36897F1F228B0F1000221470 /* Other */,
+				36897F22228B0F1000221470 /* Const */,
+				36897F24228B0F1000221470 /* Sandbox */,
+				36897F28228B0F1000221470 /* Player */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		36897F13228B0F1000221470 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				36897F14228B0F1000221470 /* Base */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		36897F14228B0F1000221470 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				36897F15228B0F1000221470 /* WPBaseViewController.swift */,
+				36897F16228B0F1000221470 /* WPBaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		36897F17228B0F1000221470 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				36897F18228B0F1000221470 /* SwiftyBeaver+WP.swift */,
+				36897F19228B0F1000221470 /* UIViewController+WP.swift */,
+				36897F1A228B0F1000221470 /* UIColor+WP.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		36897F1F228B0F1000221470 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				36897ED6228B09A500221470 /* WPAppDelegate.swift */,
+				36897F4A228B122600221470 /* WLPlayer-Bridging-Header.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		36897F22228B0F1000221470 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				36897F23228B0F1000221470 /* HGConst.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		36897F24228B0F1000221470 /* Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				36897F25228B0F1000221470 /* HGSandbox.swift */,
+			);
+			path = Sandbox;
+			sourceTree = "<group>";
+		};
+		36897F28228B0F1000221470 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				36897F2A228B0F1000221470 /* Component */,
+				36897F29228B0F1000221470 /* HGPlayerComponent.swift */,
+				36897F32228B0F1000221470 /* HGPlayerManager.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		36897F2A228B0F1000221470 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				36897F2B228B0F1000221470 /* ControlPanel */,
+				36897F2E228B0F1000221470 /* Overlay */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		36897F2B228B0F1000221470 /* ControlPanel */ = {
+			isa = PBXGroup;
+			children = (
+				36897F2C228B0F1000221470 /* HGPlayerControlPanel.swift */,
+				36897F2D228B0F1000221470 /* HGPlayerControlPanel.xib */,
+			);
+			path = ControlPanel;
+			sourceTree = "<group>";
+		};
+		36897F2E228B0F1000221470 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				36897F2F228B0F1000221470 /* HGRecommendCell.swift */,
+				36897F30228B0F1000221470 /* HGPlayerOverlay.swift */,
+				36897F31228B0F1000221470 /* HGRecommendCell.xib */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		36897F45228B0F1F00221470 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				36897EDD228B09A500221470 /* Assets.xcassets */,
+				36897EE2228B09A500221470 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		36897F4E228B137400221470 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				36897F4F228B138B00221470 /* WPHomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		7F52BE69E61A4093A606E934 /* Frameworks */ = {
@@ -85,7 +329,6 @@
 				38908A87B9442792D6618DDB /* Pods-WLPlayer.debug.xcconfig */,
 				74450B78A072D7E69BD4283B /* Pods-WLPlayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,17 +360,24 @@
 		36897ECB228B09A500221470 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WP;
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Willie;
 				TargetAttributes = {
 					36897ED2228B09A500221470 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 36897ECE228B09A500221470 /* Build configuration list for PBXProject "WLPlayer" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -149,9 +399,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36897EE1228B09A500221470 /* LaunchScreen.storyboard in Resources */,
 				36897EDE228B09A500221470 /* Assets.xcassets in Resources */,
-				36897EDC228B09A500221470 /* Main.storyboard in Resources */,
+				36897F40228B0F1000221470 /* HGPlayerControlPanel.xib in Resources */,
+				36897F43228B0F1000221470 /* HGRecommendCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,31 +454,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36897ED9228B09A500221470 /* ViewController.swift in Sources */,
-				36897ED7228B09A500221470 /* AppDelegate.swift in Sources */,
+				36897EFD228B0E1500221470 /* WLUIEventDelegate.swift in Sources */,
+				36897EFE228B0E1500221470 /* UIView+WLKit.swift in Sources */,
+				36897F37228B0F1000221470 /* UIColor+WP.swift in Sources */,
+				36897F3C228B0F1000221470 /* HGSandbox.swift in Sources */,
+				36897F41228B0F1000221470 /* HGRecommendCell.swift in Sources */,
+				36897F3E228B0F1000221470 /* HGPlayerComponent.swift in Sources */,
+				36897F44228B0F1000221470 /* HGPlayerManager.swift in Sources */,
+				36897F3F228B0F1000221470 /* HGPlayerControlPanel.swift in Sources */,
+				36897EF9228B0E1500221470 /* WLTableViewCellData.swift in Sources */,
+				36897EFF228B0E1500221470 /* UIColor+WLKit.swift in Sources */,
+				36897F33228B0F1000221470 /* WPBaseViewController.swift in Sources */,
+				36897F34228B0F1000221470 /* WPBaseNavigationController.swift in Sources */,
+				36897F35228B0F1000221470 /* SwiftyBeaver+WP.swift in Sources */,
+				36897EF8228B0E1500221470 /* WLTableViewDelegate.swift in Sources */,
+				36897EFB228B0E1500221470 /* WLTableViewOverlay.swift in Sources */,
+				36897F42228B0F1000221470 /* HGPlayerOverlay.swift in Sources */,
+				36897ED7228B09A500221470 /* WPAppDelegate.swift in Sources */,
+				36897F3B228B0F1000221470 /* HGConst.swift in Sources */,
+				36897F11228B0EF700221470 /* WPMainTabBarController.swift in Sources */,
+				36897F36228B0F1000221470 /* UIViewController+WP.swift in Sources */,
+				36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */,
+				36897EFC228B0E1500221470 /* WLTableViewCell.swift in Sources */,
+				36897F00228B0E1500221470 /* String+WLKit.swift in Sources */,
+				36897EFA228B0E1500221470 /* WLTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		36897EDA228B09A500221470 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36897EDB228B09A500221470 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		36897EDF228B09A500221470 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36897EE0228B09A500221470 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36897EE3228B09A500221470 /* Debug */ = {
@@ -352,6 +605,8 @@
 			baseConfigurationReference = 38908A87B9442792D6618DDB /* Pods-WLPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 625VCK4L2Z;
 				INFOPLIST_FILE = WLPlayer/Info.plist;
@@ -361,6 +616,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Willie.WLPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WLPlayer/Common/Other/WLPlayer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,6 +628,8 @@
 			baseConfigurationReference = 74450B78A072D7E69BD4283B /* Pods-WLPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 625VCK4L2Z;
 				INFOPLIST_FILE = WLPlayer/Info.plist;
@@ -380,6 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Willie.WLPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WLPlayer/Common/Other/WLPlayer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
