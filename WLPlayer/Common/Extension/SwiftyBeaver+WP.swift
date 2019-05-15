@@ -64,11 +64,6 @@ private extension SwiftyBeaver {
         let file = FileDestination()
         file.logFileURL = fileURL()
         log.addDestination(file)
-        
-//        let platform = SBPlatformDestination(appID: "lRPmN8",
-//                                             appSecret: "uZlwqyt1jg9gbkAIicjJms2hbb69wSyh",
-//                                             encryptionKey: "betbn0mwosdfzeqsgDx78vc2hyg7mnqk")
-//        log.addDestination(platform)
     }
     
     class func checkTimeLimit() {

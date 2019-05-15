@@ -1,14 +1,14 @@
 //
-//  WPHomeViewController.swift
+//  WPDownloadViewController.swift
 //  WLPlayer
 //
-//  Created by 王炜 on 2019/5/14.
+//  Created by 王炜 on 2019/5/15.
 //  Copyright © 2019 Willie. All rights reserved.
 //
 
 import UIKit
 
-class WPHomeViewController: UIViewController {
+class WPDownloadViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +19,10 @@ class WPHomeViewController: UIViewController {
 
 // MARK: - prviate
 
-private extension WPHomeViewController {
+private extension WPDownloadViewController {
     
     func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
 }
+

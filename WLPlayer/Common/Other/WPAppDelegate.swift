@@ -53,5 +53,8 @@ private extension WPAppDelegate {
         let tabBarController = WPBaseNavigationController(rootViewController: WPMainTabBarController())
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setMinimumDismissTimeInterval(2)
+        SVProgressHUD.setMaximumDismissTimeInterval(3)
     }
 }

@@ -13,6 +13,7 @@ class WPMainTabBarController: UITabBarController {
 
         setupUI()
         initViewContollers()
+        addNotifObserver()
     }
 }
 
@@ -27,17 +28,59 @@ private extension WPMainTabBarController {
     
     func setupUI() {
         tabBar.isTranslucent = false
+        tabBar.barTintColor = .WPPrimaryColor
         delegate = self
     }
     
     func initViewContollers() {
+        
         let vc1 = WPHomeViewController()
-        vc1.tabBarItem = UITabBarItem(title: "首页", image: #imageLiteral(resourceName: "public_weixin").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "videoRoom_comment_collect").withRenderingMode(.alwaysOriginal))
+        vc1.tabBarItem = UITabBarItem(title: "文件",
+                                      image: #imageLiteral(resourceName: "sideslip_collect").withRenderingMode(.alwaysOriginal),
+                                      selectedImage: #imageLiteral(resourceName: "videoRoom_comment_collect").withRenderingMode(.alwaysOriginal))
         vc1.tabBarItem.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18),
-            NSAttributedString.Key.foregroundColor: UIColor.WPPrimaryColor,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
             ], for: .normal)
-        setViewControllers([vc1], animated: false)
+        
+        let vc2 = WPHomeViewController()
+        vc2.tabBarItem = UITabBarItem(title: "下载",
+                                      image: #imageLiteral(resourceName: "videoRoom_comment_unfavour").withRenderingMode(.alwaysOriginal),
+                                      selectedImage: #imageLiteral(resourceName: "videoRoom_comment_favour").withRenderingMode(.alwaysOriginal))
+        vc2.tabBarItem.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
+            ], for: .normal)
+        setViewControllers([vc1, vc2], animated: false)
+        
         navigationItem.title = vc1.tabBarItem.title
+    }
+    
+    func addNotifObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onNotif(notif:)),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+    }
+    
+    @objc func onNotif(notif: NSNotification) {
+        switch notif.name {
+        case UIApplication.didBecomeActiveNotification:
+            UIPasteboard.general.string = "asd.m3u8"
+            if let string = UIPasteboard.general.string, isValid(string: string) {
+                SVProgressHUD.showSuccess(withStatus: "开始下载\(string)")
+            }
+        default:
+            break
+        }
+    }
+    
+    func isValid(string: String) -> Bool {
+        if string.hasSuffix(".m3u8") ||
+            string.hasSuffix(".mp4") {
+            return true
+        } else {
+            return false
+        }
     }
 }

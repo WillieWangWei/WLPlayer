@@ -10,7 +10,7 @@ extension UIColor {
     
     class var WPPrimaryColor: UIColor {
         get {
-            return .init(hex: 0xFFFFC32D)
+            return .init(hex: 0xFF142636)
         }
     }
 }

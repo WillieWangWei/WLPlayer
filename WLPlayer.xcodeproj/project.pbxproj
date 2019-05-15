@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362FE8CC228C2E73001ED4B9 /* WPDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362FE8CB228C2E73001ED4B9 /* WPDownloadViewController.swift */; };
 		36897ED7228B09A500221470 /* WPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897ED6228B09A500221470 /* WPAppDelegate.swift */; };
 		36897EDE228B09A500221470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36897EDD228B09A500221470 /* Assets.xcassets */; };
 		36897EF8228B0E1500221470 /* WLTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EEC228B0E1500221470 /* WLTableViewDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362FE8CB228C2E73001ED4B9 /* WPDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPDownloadViewController.swift; sourceTree = "<group>"; };
 		36897ED3228B09A500221470 /* WLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36897ED6228B09A500221470 /* WPAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPAppDelegate.swift; sourceTree = "<group>"; };
 		36897EDD228B09A500221470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		362FE8CA228C2E60001ED4B9 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				362FE8CB228C2E73001ED4B9 /* WPDownloadViewController.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
 		36897ECA228B09A500221470 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 		36897F01228B0EF700221470 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				362FE8CA228C2E60001ED4B9 /* Download */,
 				36897F4E228B137400221470 /* Home */,
 				36897F0A228B0EF700221470 /* Main */,
 			);
@@ -493,6 +504,7 @@
 				36897F11228B0EF700221470 /* WPMainTabBarController.swift in Sources */,
 				36897F36228B0F1000221470 /* UIViewController+WP.swift in Sources */,
 				36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */,
+				362FE8CC228C2E73001ED4B9 /* WPDownloadViewController.swift in Sources */,
 				36897EFC228B0E1500221470 /* WLTableViewCell.swift in Sources */,
 				36897F00228B0E1500221470 /* String+WLKit.swift in Sources */,
 				36897EFA228B0E1500221470 /* WLTableView.swift in Sources */,
