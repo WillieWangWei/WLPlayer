@@ -3,9 +3,15 @@ PODS:
     - Fabric (~> 1.10.0)
   - Fabric (1.10.0)
   - mobile-ffmpeg-full (4.2.1)
-  - SnapKit (4.2.0)
+  - SnapKit (5.0.0)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyBeaver (1.7.0)
+  - WCDB.swift (1.0.8.2):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
   - Crashlytics
@@ -14,6 +20,7 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftyBeaver
+  - WCDB.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,17 +28,23 @@ SPEC REPOS:
     - Fabric
     - mobile-ffmpeg-full
     - SnapKit
+    - SQLiteRepairKit
     - SVProgressHUD
     - SwiftyBeaver
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
 
 SPEC CHECKSUMS:
   Crashlytics: 1f5f752c7feac0add0cc1774756f96444fa3b1a7
   Fabric: 09de1e053eb7dc415593166ad3e53d4c88123405
   mobile-ffmpeg-full: 2a2cca559a0e9b909b431b810cd8c184077b3f41
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
+  WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 09230c7c4dbc86a82d82d93ee3fc59f05b180331
+PODFILE CHECKSUM: e98e2b79c843ced1e41a6bc7d412f1077fb98963
 
 COCOAPODS: 1.7.0.beta.3

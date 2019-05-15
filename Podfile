@@ -7,6 +7,7 @@ target 'WLPlayer' do
   
   pod 'Fabric'
   pod 'SnapKit'
+  pod 'WCDB.swift'
   pod 'Crashlytics'
   pod 'SwiftyBeaver'
   pod 'SVProgressHUD'

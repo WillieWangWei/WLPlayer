@@ -15,7 +15,7 @@ class WLTableViewOverlay: UIView {
         imageView.snp.makeConstraints({ (make) in
             make.width.height.equalTo(60)
             make.centerX.equalTo(self)
-            make.bottom.equalTo(titleLabel.snp_top).offset(-30)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-30)
         })
         return imageView
     }()
@@ -35,7 +35,7 @@ class WLTableViewOverlay: UIView {
         addSubview(button)
         button.snp.makeConstraints({ (make) in
             make.centerX.equalTo(self)
-            make.top.equalTo(titleLabel.snp_bottom).offset(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(30)
         })
         return button
     }()
