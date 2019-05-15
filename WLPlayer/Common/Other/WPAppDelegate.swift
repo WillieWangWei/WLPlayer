@@ -18,7 +18,7 @@ class WPAppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setupLog()
-//        setupFabric()
+        setupFabric()
         setupWindow()
         
         return true

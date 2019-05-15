@@ -3,4 +3,6 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <mobileffmpeg/MobileFFmpeg.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <mobileffmpeg/MobileFFmpegConfig.h>

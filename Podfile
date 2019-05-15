@@ -10,5 +10,6 @@ target 'WLPlayer' do
   pod 'Crashlytics'
   pod 'SwiftyBeaver'
   pod 'SVProgressHUD'
+  pod 'mobile-ffmpeg-full'
 
 end
