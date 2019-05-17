@@ -8,18 +8,22 @@
 
 import Fabric
 import Crashlytics
+import AVFoundation
 
 @UIApplicationMain
 class WPAppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var player: AVPlayer?
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setupLog()
         setupFabric()
-        setupWindow()
+        setupUI()
+        setupDownloader()
+        setupPlayer()
         
         return true
     }
@@ -35,6 +39,10 @@ class WPAppDelegate: UIResponder, UIApplicationDelegate {
             return .portrait
         }
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        WPVideoDB.closeDB()
+    }
 }
 
 private extension WPAppDelegate {
@@ -48,13 +56,32 @@ private extension WPAppDelegate {
         Fabric.with([Crashlytics.self])
     }
     
-    func setupWindow() {
+    func setupUI() {
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         let tabBarController = WPBaseNavigationController(rootViewController: WPMainTabBarController())
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+        
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setMinimumDismissTimeInterval(2)
-        SVProgressHUD.setMaximumDismissTimeInterval(3)
+        SVProgressHUD.setMaximumDismissTimeInterval(4)
+    }
+    
+    func setupDownloader() {
+        WPDownloader.run()
+    }
+    
+    func setupPlayer() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch {
+            WPHUD.error("播放器初始化失败: \(error.localizedDescription)")
+            return
+        }
+        let url = URL(fileURLWithPath: Bundle.main.path(forResource: "10s", ofType: "mp3")!)
+        let item = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: item)
+        player?.play()
     }
 }

@@ -20,7 +20,9 @@ let STATUSBAR_PLUS_NAVIGATIONBAR_HEIGHT = STATUSBAR_HEIGHT + NAVIGATIONBAR_HEIGH
 let TABBAR_UNSAFE_HEIGHT = CGFloat(IS_FULL_SCREEN ? 34 : 0)
 let TABBAR_HEIGHT = CGFloat(49 + TABBAR_UNSAFE_HEIGHT)
 let WPLog: SwiftyBeaver.Type = SwiftyBeaver.self
-let WPPlayer = WPPlayerManager.default
+let WPPlayer = WPPlayerManager.shared
+let WPVideoDB = WPVideoDBManager.shared
+let WPDownloader = WPDownloaderManager.shared
 
 var IS_FULL_SCREEN: Bool {
     if #available(iOS 11, *) {

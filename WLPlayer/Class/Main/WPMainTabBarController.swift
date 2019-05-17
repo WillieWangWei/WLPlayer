@@ -13,7 +13,6 @@ class WPMainTabBarController: UITabBarController {
 
         setupUI()
         initViewContollers()
-        addNotifObserver()
     }
 }
 
@@ -43,7 +42,7 @@ private extension WPMainTabBarController {
             NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
             ], for: .normal)
         
-        let vc2 = WPHomeViewController()
+        let vc2 = WPDownloadViewController()
         vc2.tabBarItem = UITabBarItem(title: "下载",
                                       image: #imageLiteral(resourceName: "videoRoom_comment_unfavour").withRenderingMode(.alwaysOriginal),
                                       selectedImage: #imageLiteral(resourceName: "videoRoom_comment_favour").withRenderingMode(.alwaysOriginal))
@@ -54,33 +53,5 @@ private extension WPMainTabBarController {
         setViewControllers([vc1, vc2], animated: false)
         
         navigationItem.title = vc1.tabBarItem.title
-    }
-    
-    func addNotifObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(onNotif(notif:)),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
-    }
-    
-    @objc func onNotif(notif: NSNotification) {
-        switch notif.name {
-        case UIApplication.didBecomeActiveNotification:
-            UIPasteboard.general.string = "asd.m3u8"
-            if let string = UIPasteboard.general.string, isValid(string: string) {
-                SVProgressHUD.showSuccess(withStatus: "开始下载\(string)")
-            }
-        default:
-            break
-        }
-    }
-    
-    func isValid(string: String) -> Bool {
-        if string.hasSuffix(".m3u8") ||
-            string.hasSuffix(".mp4") {
-            return true
-        } else {
-            return false
-        }
     }
 }

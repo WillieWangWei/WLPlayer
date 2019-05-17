@@ -24,15 +24,14 @@ class WPPlayerManager: NSObject {
     private var playerItemContext = 0
     private var timeObserverToken: Any?
     
-    static let `default` = WPPlayerManager()
+    static let shared = WPPlayerManager()
     var orientation: UIInterfaceOrientation = .portrait
     
     override init() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
         } catch {
-            WPLog.error(error)
-            SVProgressHUD.showError(withStatus: error.localizedDescription)
+            WPHUD.error(error.localizedDescription)
         }
     }
     
@@ -99,7 +98,7 @@ class WPPlayerManager: NSObject {
     }
     
     deinit {
-        WPLog.debug(self)
+        WPLog.verbose("deinit \(self)")
     }
 }
 
@@ -192,7 +191,7 @@ private extension WPPlayerManager {
     func initcomponents() {
         components.append(contentsOf: [
             WPPlayerControlPanel.instanceFromNib(),
-            WPPlayerOverlay(),
+//            WPPlayerOverlay(),
             ])
         components.forEach { $0.register(toPlayer: player!, contentView: contentView!) }
     }

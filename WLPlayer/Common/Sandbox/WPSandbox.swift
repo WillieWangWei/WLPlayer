@@ -28,6 +28,33 @@ var WPLogsDirectoryPath: String {
     return createDirectoryIfNeeded(atPath: path) ?? ""
 }
 
+// MARK: - video
+
+/// .../Documents/WPVideos
+var WPVideosDirectoryPath: String {
+    let path = WPDocumentsDirectoryPath + "/WPVideos"
+    return createDirectoryIfNeeded(atPath: path) ?? ""
+}
+
+// MARK: - database
+
+/// .../Documents/WPVideos
+var WPDatabasesDirectoryPath: String {
+    let path = WPDocumentsDirectoryPath + "/WPDatabases"
+    return createDirectoryIfNeeded(atPath: path) ?? ""
+}
+
+// MARK: - util
+
+func updatedPath(for path: String) -> String {
+    var components = path.components(separatedBy: "/")
+    if components.count < 8 { return path }
+    let curComponents = WPDocumentsDirectoryPath.components(separatedBy: "/")
+    components[6] = curComponents[6]
+    let updatedPath = components.joined(separator: "/")
+    return updatedPath
+}
+
 // MARK: - private
 
 private func createDirectoryIfNeeded(atPath path: String) -> String? {

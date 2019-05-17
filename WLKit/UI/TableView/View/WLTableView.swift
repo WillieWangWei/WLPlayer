@@ -38,7 +38,7 @@ class WLTableView: UITableView {
     }
     
     deinit {
-        WPLog.debug(self)
+        WPLog.verbose("deinit \(self)")
     }
 }
 

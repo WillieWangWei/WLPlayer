@@ -14,6 +14,6 @@ class WPBaseViewController: UIViewController {
     }
 
     deinit {
-        WPLog.debug(self)
+        WPLog.verbose("deinit \(self)")
     }
 }
