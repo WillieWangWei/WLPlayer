@@ -44,20 +44,30 @@
                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zI-N7-ymP">
+                        <rect key="frame" x="10" y="99" width="310" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="JgL-p7-kXZ"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="nf5-S2-CLW" firstAttribute="leading" secondItem="e7K-Fz-chx" secondAttribute="leading" id="51v-rj-IAu"/>
                     <constraint firstItem="Y4Q-M5-G0Z" firstAttribute="leading" secondItem="kS2-tb-Nyl" secondAttribute="trailing" constant="10" id="7Bu-9s-dG8"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nf5-S2-CLW" secondAttribute="trailing" constant="10" id="7H5-Rg-GTj"/>
+                    <constraint firstAttribute="bottom" secondItem="1zI-N7-ymP" secondAttribute="bottom" id="7bR-or-X8d"/>
                     <constraint firstItem="Y4Q-M5-G0Z" firstAttribute="top" secondItem="kS2-tb-Nyl" secondAttribute="top" id="DLp-pd-v8n"/>
                     <constraint firstItem="nf5-S2-CLW" firstAttribute="bottom" secondItem="kS2-tb-Nyl" secondAttribute="bottom" id="EYe-Im-Q0s"/>
                     <constraint firstItem="e7K-Fz-chx" firstAttribute="leading" secondItem="Y4Q-M5-G0Z" secondAttribute="leading" id="I49-ly-V5i"/>
                     <constraint firstAttribute="bottom" secondItem="kS2-tb-Nyl" secondAttribute="bottom" constant="10" id="JLa-LJ-gE9"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e7K-Fz-chx" secondAttribute="trailing" constant="10" id="JTN-kc-3db"/>
                     <constraint firstItem="e7K-Fz-chx" firstAttribute="centerY" secondItem="kS2-tb-Nyl" secondAttribute="centerY" id="S6M-wZ-PuH"/>
+                    <constraint firstAttribute="trailing" secondItem="1zI-N7-ymP" secondAttribute="trailing" id="VXW-Tg-vTW"/>
                     <constraint firstItem="kS2-tb-Nyl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZHb-QB-IaD"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y4Q-M5-G0Z" secondAttribute="trailing" constant="10" id="e5f-2l-aen"/>
+                    <constraint firstItem="1zI-N7-ymP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hyY-VO-rXo"/>
                     <constraint firstItem="kS2-tb-Nyl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="p59-VD-EB7"/>
                     <constraint firstItem="kS2-tb-Nyl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uCq-7v-gGt"/>
                 </constraints>

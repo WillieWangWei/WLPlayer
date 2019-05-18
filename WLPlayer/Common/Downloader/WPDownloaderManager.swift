@@ -54,7 +54,8 @@ private extension WPDownloaderManager {
         switch notif.name {
         case UIApplication.didBecomeActiveNotification:
             
-            UIPasteboard.general.string = "https://video.twimg.com/ext_tw_video/1128129173610844161/pu/pl/w5uy7Xo0QjeGj2WL.m3u8?tag=9"
+//            UIPasteboard.general.string = "https://video.twimg.com/ext_tw_video/1129597911954857984/pu/pl/8Sno30suDjAIHLNI.m3u8?tag=9"
+//            UIPasteboard.general.string = "https://video.twimg.com/ext_tw_video/1128129173610844161/pu/pl/w5uy7Xo0QjeGj2WL.m3u8?tag=9"
             
             guard let string = UIPasteboard.general.string, let url = URL(string: string) else {
                 WPHUD.error("URL为空")

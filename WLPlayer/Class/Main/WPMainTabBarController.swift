@@ -13,6 +13,10 @@ class WPMainTabBarController: UITabBarController {
 
         setupUI()
         initViewContollers()
+        
+        DispatchQueue.main.async {
+            self.present(WPLaunchViewController(), animated: false)
+        }
     }
 }
 

@@ -126,7 +126,7 @@ private extension WLTableView {
     func initSetup() {
         delegate = self;
         dataSource = self;
-        backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         separatorStyle = .none
         estimatedRowHeight = 0
         refreshControl = UIRefreshControl()

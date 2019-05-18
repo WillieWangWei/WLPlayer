@@ -72,7 +72,7 @@ extension WPHomeViewController: WLTableViewDelegate {
 private extension WPHomeViewController {
     
     func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     func fetchVideos() {
