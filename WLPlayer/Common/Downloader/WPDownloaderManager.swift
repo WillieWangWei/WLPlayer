@@ -6,9 +6,12 @@
 //  Copyright © 2019 Willie. All rights reserved.
 //
 
+import AVFoundation
+
 class WPDownloaderManager: NSObject {
     
     private var currentModel: WPVideoModel?
+    private var generator: WLAssetImageGenerator?
     
     static let shared = WPDownloaderManager()
 }
@@ -84,27 +87,19 @@ private extension WPDownloaderManager {
     
     func download() {
         
-        guard var model = currentModel else {
-            WPHUD.error("需要下载的model数据异常")
-            return
-        }
-        
-        guard let command = getCommand() else {
-            WPHUD.error("生成下载命令失败: \(model.name)")
-            return
-        }
-        
-        let filePath = model.localPath
-        
-        if FileManager.default.fileExists(atPath: filePath) {
+        if FileManager.default.fileExists(atPath: currentModel!.fileUrl.absoluteString) {
             do {
-                try FileManager.default.removeItem(atPath: filePath)
+                try FileManager.default.removeItem(at: currentModel!.fileUrl)
             } catch {
-                WPHUD.error("删除原有文件失败: \(model.name), \(error.localizedDescription)")
+                WPHUD.error("删除原有文件失败: \(currentModel!.name), \(error.localizedDescription)")
                 return
             }
         }
         
+        guard let command = getCommand() else {
+            WPHUD.info("生成下载命令失败: \(currentModel!.name)")
+            return
+        }
         WPHUD.info("执行下载命令: \(command)")
         
         DispatchQueue.global().async {
@@ -116,34 +111,84 @@ private extension WPDownloaderManager {
                 
                 if result == RETURN_CODE_SUCCESS {
                     
-                    WPHUD.succesee("下载成功: \(model.name)")
-                    do {
-                        model.downloadedTime = self.getCurrentTime()
-                        try WPVideoDB.insert(model: model)
-                        WPHUD.succesee("写入数据库成功: \(model.name)")
-                    } catch {
-                        WPHUD.error("写入数据库失败: \(model.name), \(error.localizedDescription)")
-                    }
+                    WPLog.debug("下载成功: \(self.currentModel!.name)")
+                    self.getDownloadedTime()
+                    self.getDuration()
+                    self.getCover(completion: {
+                        do {
+                            try WPVideoDB.insert(model: self.currentModel!)
+                            WPHUD.succesee("写入数据库成功: \(self.currentModel!.name)")
+                        } catch {
+                            WPHUD.error("写入数据库失败: \(self.currentModel!.name), \(error.localizedDescription)")
+                        }
+                    })
                     
                 } else if result == RETURN_CODE_SUCCESS {
-                    WPHUD.error("下载取消: \(model.name)")
+                    WPHUD.error("下载取消: \(self.currentModel!.name)")
                 } else {
-                    WPHUD.error("下载失败: \(model.name)")
+                    WPHUD.error("下载失败: \(self.currentModel!.name)")
                 }
             }
         }
     }
     
     func getCommand() -> String? {
-        guard let model = currentModel else { return nil }
-        let command = "-i \(model.url.absoluteString) \(model.localPath)"
+        if currentModel == nil { return nil }
+        let command = "-i \(currentModel!.url.absoluteString) \(currentModel!.fileUrl.absoluteString)"
         return command
     }
     
-    func getCurrentTime() -> String {
+    func getDownloadedTime() {
+        if currentModel == nil { return }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd  HH:mm:ss"
         let string = dateFormatter.string(from: Date())
-        return string
+        currentModel!.downloadedTime = string
+    }
+    
+    func getDuration() {
+        if currentModel == nil { return }
+        let asset = AVAsset(url: currentModel!.fileUrl)
+        let duration = CMTimeGetSeconds(asset.duration)
+        currentModel!.duration = duration
+    }
+    
+    func getCover(completion: @escaping () -> ()) {
+        if currentModel == nil { return }
+        
+        let FPS: Int = 20
+        let timeScale: CMTimeScale = 600
+        let imageDuration: TimeInterval = 2
+        let asset = AVAsset(url: currentModel!.fileUrl)
+        let videoDuration = CMTimeGetSeconds(asset.duration)
+        let begin: TimeInterval = (currentModel?.duration)! * 0.5 - 1
+        let count = FPS * Int(imageDuration) / 2
+        var times = [NSValue]()
+        
+        for i in 0..<count {
+            let value = begin + TimeInterval(i) * (1.0 / TimeInterval(FPS))
+            if value >= videoDuration {
+                continue
+            }
+            times.append(NSValue(time: CMTime(value: CMTimeValue(value * Double(timeScale)), timescale: timeScale)))
+        }
+        
+        generator?.cancel()
+        generator = WLAssetImageGenerator(with: asset)
+        generator?.asyncGenerateImages(at: times, appendReverse: true, completion: { (images) in
+            
+            let encoder = YYImageEncoder(type: .webP)
+            encoder?.loopCount = 0
+            images.forEach { encoder?.add($0, duration: 1 / TimeInterval(FPS)) }
+            let data = encoder?.encode()
+            let path = WPCoversDirectoryPath + "/\(self.currentModel!.name).webp"
+            do {
+                try data?.write(to: URL(fileURLWithPath: path))
+                self.currentModel!.coverUrl = URL(fileURLWithPath: path)
+                completion()
+            } catch {
+                WPLog.error(error.localizedDescription)
+            }
+        })
     }
 }

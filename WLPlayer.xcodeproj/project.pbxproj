@@ -15,6 +15,7 @@
 		362FE8D4228C41B2001ED4B9 /* WPDownloaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362FE8D3228C41B2001ED4B9 /* WPDownloaderManager.swift */; };
 		365DD5BF228EBF2E008501CA /* WPVideoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365DD5BD228EBF2E008501CA /* WPVideoInfoCell.swift */; };
 		365DD5C0228EBF2E008501CA /* WPVideoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365DD5BE228EBF2E008501CA /* WPVideoInfoCell.xib */; };
+		365DD5C3228ED819008501CA /* WLAssetImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365DD5C2228ED819008501CA /* WLAssetImageGenerator.swift */; };
 		36897ED7228B09A500221470 /* WPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897ED6228B09A500221470 /* WPAppDelegate.swift */; };
 		36897EDE228B09A500221470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36897EDD228B09A500221470 /* Assets.xcassets */; };
 		36897EF8228B0E1500221470 /* WLTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897EEC228B0E1500221470 /* WLTableViewDelegate.swift */; };
@@ -54,6 +55,7 @@
 		362FE8D3228C41B2001ED4B9 /* WPDownloaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPDownloaderManager.swift; sourceTree = "<group>"; };
 		365DD5BD228EBF2E008501CA /* WPVideoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPVideoInfoCell.swift; sourceTree = "<group>"; };
 		365DD5BE228EBF2E008501CA /* WPVideoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WPVideoInfoCell.xib; sourceTree = "<group>"; };
+		365DD5C2228ED819008501CA /* WLAssetImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLAssetImageGenerator.swift; sourceTree = "<group>"; };
 		36897ED3228B09A500221470 /* WLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36897ED6228B09A500221470 /* WPAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPAppDelegate.swift; sourceTree = "<group>"; };
 		36897EDD228B09A500221470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = Downloader;
 			sourceTree = "<group>";
 		};
+		365DD5C1228ED7C9008501CA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				365DD5C2228ED819008501CA /* WLAssetImageGenerator.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		36897ECA228B09A500221470 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 		36897EE8228B0E1500221470 /* WLKit */ = {
 			isa = PBXGroup;
 			children = (
+				365DD5C1228ED7C9008501CA /* Util */,
 				36897EE9228B0E1500221470 /* UI */,
 				36897EF4228B0E1500221470 /* Extension */,
 			);
@@ -540,6 +551,7 @@
 			files = (
 				36897EFD228B0E1500221470 /* WLUIEventDelegate.swift in Sources */,
 				36897EFE228B0E1500221470 /* UIView+WLKit.swift in Sources */,
+				365DD5C3228ED819008501CA /* WLAssetImageGenerator.swift in Sources */,
 				36897F37228B0F1000221470 /* UIColor+WP.swift in Sources */,
 				36897F3C228B0F1000221470 /* WPSandbox.swift in Sources */,
 				36897F41228B0F1000221470 /* WPRecommendCell.swift in Sources */,

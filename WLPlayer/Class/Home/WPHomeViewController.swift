@@ -46,7 +46,7 @@ extension WPHomeViewController: WLUIEventDelegate {
         switch event {
         case "selected":
             guard let model = entity as? WPVideoModel else { return }
-            WPPlayer.url = URL(fileURLWithPath: updatedPath(for: model.localPath))
+            WPPlayer.url = model.fileUrl
             WPPlayer.landscapeRight()
         default:
             break

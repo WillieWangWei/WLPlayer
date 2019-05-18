@@ -36,6 +36,14 @@ var WPVideosDirectoryPath: String {
     return createDirectoryIfNeeded(atPath: path) ?? ""
 }
 
+// MARK: - cover
+
+/// .../Documents/WPCovers
+var WPCoversDirectoryPath: String {
+    let path = WPDocumentsDirectoryPath + "/WPCovers"
+    return createDirectoryIfNeeded(atPath: path) ?? ""
+}
+
 // MARK: - database
 
 /// .../Documents/WPVideos

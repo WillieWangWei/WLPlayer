@@ -3,6 +3,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YYImage/YYImage.h>
+#import <YYImage/YYImageCoder.h>
 #import <mobileffmpeg/MobileFFmpeg.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <mobileffmpeg/MobileFFmpegConfig.h>

@@ -16,10 +16,10 @@ struct WPVideoModel: WCDBSwift.TableCodable {
     
     var name: String
     var url: URL
-    var localPath: String
+    var fileUrl: URL
     var downloadedTime: String?
     var duration: TimeInterval?
-    var coverPath: String?
+    var coverUrl: URL?
     
     enum CodingKeys: String, CodingTableKey {
         typealias Root = WPVideoModel
@@ -27,10 +27,10 @@ struct WPVideoModel: WCDBSwift.TableCodable {
         case dbID
         case name
         case url
-        case localPath
+        case fileUrl
         case downloadedTime
         case duration
-        case coverPath
+        case coverUrl
         
         static let objectRelationalMapping = TableBinding(CodingKeys.self)
         
@@ -46,7 +46,7 @@ struct WPVideoModel: WCDBSwift.TableCodable {
         if isValid(url: url) {
             self.name = url.lastPathComponent.components(separatedBy: ".").first!
             self.url = url
-            self.localPath = WPVideosDirectoryPath + "/" + self.name + ".mp4"
+            self.fileUrl = URL(fileURLWithPath: WPVideosDirectoryPath + "/" + self.name + ".mp4")
         } else {
             return nil
         }
