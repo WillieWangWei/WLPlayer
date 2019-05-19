@@ -19,8 +19,8 @@ class WPLaunchViewController: UIViewController {
         touchView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         view.addSubview(touchView)
         touchView.snp.makeConstraints { (make) in
-            make.trailing.bottom.equalTo(view)
-            make.width.height.equalTo(40)
+            make.top.trailing.equalTo(view)
+            make.width.height.equalTo(100)
         }
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(onTap))

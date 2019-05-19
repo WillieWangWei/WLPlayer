@@ -24,7 +24,6 @@ class WPAppDelegate: UIResponder, UIApplicationDelegate {
         setupUI()
         setupDownloader()
         setupPlayer()
-        setupUserNotification()
         
         return true
     }
@@ -86,9 +85,5 @@ private extension WPAppDelegate {
         let item = AVPlayerItem(url: url)
         player = AVPlayer(playerItem: item)
         player?.play()
-    }
-    
-    func setupUserNotification() {
-        WLUserNotificationCenter.current.run()
     }
 }

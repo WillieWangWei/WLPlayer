@@ -116,7 +116,7 @@ extension WLTableView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let cellData = sourceData[indexPath.row]
         cellDelegate?.onEvent(info: [
-            "event": "selecte",
+            "event": "select",
             "entity": cellData.entity,
             ])
     }

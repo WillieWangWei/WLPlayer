@@ -62,8 +62,13 @@ private extension WPDownloaderManager {
                 return
             }
             
+            if string == currentModel?.url.absoluteString {
+                WPHUD.info("正在下载此文件: \(currentModel!.name)")
+                return
+            }
+            
             guard let model = WPVideoModel(url: url) else {
-                WPHUD.error("创建model失败: \(url)")
+                WPHUD.error("创建model失败: \"\(url)\"")
                 return
             }
             
@@ -110,31 +115,31 @@ private extension WPDownloaderManager {
             let result = MobileFFmpeg.execute(command)
             WPLog.debug("执行下载命令结束: \(result)")
             
-            DispatchQueue.main.async {
+            if result == RETURN_CODE_SUCCESS {
                 
-                if result == RETURN_CODE_SUCCESS {
-                    
-                    WPLog.debug("下载成功: \(self.currentModel!.name)")
-                    self.getDownloadedTime()
-                    self.getDuration()
-                    self.getCover(completion: {
-                        do {
-                            try WPVideoDB.insert(model: self.currentModel!)
+                WPLog.debug("下载成功: \(self.currentModel!.name)")
+                self.getDownloadedTime()
+                self.getDuration()
+                self.getCover(completion: {
+                    do {
+                        try WPVideoDB.insert(model: self.currentModel!)
+                        DispatchQueue.main.async {
                             WPHUD.succesee("写入数据库成功: \(self.currentModel!.name)")
+                            WLUserNotificationCenter.current.run()
                             WLUserNotificationCenter.current.postNotification(
                                 title: "下载成功", body: "文件下载成功: \(self.currentModel!.name)")
                             NotificationCenter.default.post(name: WPVideoDidDownloadedNotification,
                                                             object: self.currentModel!)
-                        } catch {
-                            WPHUD.error("写入数据库失败: \(self.currentModel!.name), \(error.localizedDescription)")
                         }
-                    })
-                    
-                } else if result == RETURN_CODE_SUCCESS {
-                    WPHUD.error("下载取消: \(self.currentModel!.name)")
-                } else {
-                    WPHUD.error("下载失败: \(self.currentModel!.name)")
-                }
+                    } catch {
+                        WPHUD.error("写入数据库失败: \(self.currentModel!.name), \(error.localizedDescription)")
+                    }
+                })
+                
+            } else if result == RETURN_CODE_SUCCESS {
+                WPHUD.error("下载取消: \(self.currentModel!.name)")
+            } else {
+                WPHUD.error("下载失败: \(self.currentModel!.name)")
             }
         }
     }
