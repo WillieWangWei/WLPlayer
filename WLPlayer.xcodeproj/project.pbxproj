@@ -43,7 +43,7 @@
 		36897F42228B0F1000221470 /* WPPlayerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F30228B0F1000221470 /* WPPlayerOverlay.swift */; };
 		36897F43228B0F1000221470 /* WPRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36897F31228B0F1000221470 /* WPRecommendCell.xib */; };
 		36897F44228B0F1000221470 /* WPPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F32228B0F1000221470 /* WPPlayerManager.swift */; };
-		36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F4F228B138B00221470 /* WPHomeViewController.swift */; };
+		36897F50228B138B00221470 /* WPFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F4F228B138B00221470 /* WPFileViewController.swift */; };
 		36F6A76E2291833D0043EA88 /* WLUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F6A76D2291833D0043EA88 /* WLUserNotificationCenter.swift */; };
 		8906B98E678E38D1370E9378 /* Pods_WLPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -88,7 +88,7 @@
 		36897F31228B0F1000221470 /* WPRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WPRecommendCell.xib; sourceTree = "<group>"; };
 		36897F32228B0F1000221470 /* WPPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPPlayerManager.swift; sourceTree = "<group>"; };
 		36897F4A228B122600221470 /* WLPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WLPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
-		36897F4F228B138B00221470 /* WPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHomeViewController.swift; sourceTree = "<group>"; };
+		36897F4F228B138B00221470 /* WPFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPFileViewController.swift; sourceTree = "<group>"; };
 		36F6A76D2291833D0043EA88 /* WLUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLUserNotificationCenter.swift; sourceTree = "<group>"; };
 		38908A87B9442792D6618DDB /* Pods-WLPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLPlayer.debug.xcconfig"; path = "Target Support Files/Pods-WLPlayer/Pods-WLPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,7 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				362FE8CA228C2E60001ED4B9 /* Download */,
-				36897F4E228B137400221470 /* Home */,
+				36897F4E228B137400221470 /* File */,
 				36682E0822905C8100A7BBD4 /* Launch */,
 				36897F0A228B0EF700221470 /* Main */,
 			);
@@ -394,14 +394,14 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		36897F4E228B137400221470 /* Home */ = {
+		36897F4E228B137400221470 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				36897F4F228B138B00221470 /* WPHomeViewController.swift */,
+				36897F4F228B138B00221470 /* WPFileViewController.swift */,
 				365DD5BD228EBF2E008501CA /* WPVideoInfoCell.swift */,
 				365DD5BE228EBF2E008501CA /* WPVideoInfoCell.xib */,
 			);
-			path = Home;
+			path = File;
 			sourceTree = "<group>";
 		};
 		7F52BE69E61A4093A606E934 /* Frameworks */ = {
@@ -590,7 +590,7 @@
 				36267409228D7FD00052A747 /* WPVideoDBManager.swift in Sources */,
 				36682E0A22905CAD00A7BBD4 /* WPLaunchViewController.swift in Sources */,
 				36897F36228B0F1000221470 /* UIViewController+WP.swift in Sources */,
-				36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */,
+				36897F50228B138B00221470 /* WPFileViewController.swift in Sources */,
 				362FE8CC228C2E73001ED4B9 /* WPDownloadViewController.swift in Sources */,
 				36897EFC228B0E1500221470 /* WLTableViewCell.swift in Sources */,
 				36897F00228B0E1500221470 /* String+WLKit.swift in Sources */,

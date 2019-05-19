@@ -26,6 +26,4 @@ class WLTableViewCell: UITableViewCell {
         self.data = data
         return wl_height
     }
-    
-    func selected(by tableView: WLTableView, atIndexPath IndexPath: IndexPath) {}
 }

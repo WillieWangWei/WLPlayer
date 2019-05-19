@@ -35,11 +35,4 @@ class WPVideoInfoCell: WLTableViewCell {
         
         return 100
     }
-    
-    override func selected(by tableView: WLTableView, atIndexPath IndexPath: IndexPath) {
-        delegate?.onEvent(info: [
-            "event": "selected",
-            "entity": self.data!.entity,
-            ])
-    }
 }

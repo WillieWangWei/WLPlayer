@@ -101,12 +101,14 @@ private extension WPDownloaderManager {
             WPHUD.info("生成下载命令失败: \(currentModel!.name)")
             return
         }
-        WPHUD.info("执行下载命令: \(command)")
+        
+        WPHUD.info("开始下载: \(currentModel!.name)")
         
         DispatchQueue.global().async {
             
+            WPLog.debug("执行下载命令: \(command)")
             let result = MobileFFmpeg.execute(command)
-            WPHUD.info("执行下载命令结束: \(result)")
+            WPLog.debug("执行下载命令结束: \(result)")
             
             DispatchQueue.main.async {
                 
@@ -121,9 +123,8 @@ private extension WPDownloaderManager {
                             WPHUD.succesee("写入数据库成功: \(self.currentModel!.name)")
                             WLUserNotificationCenter.current.postNotification(
                                 title: "下载成功", body: "文件下载成功: \(self.currentModel!.name)")
-                            // 发推送
-                            // 删除
-                            // 下载进度
+                            NotificationCenter.default.post(name: WPVideoDidDownloadedNotification,
+                                                            object: self.currentModel!)
                         } catch {
                             WPHUD.error("写入数据库失败: \(self.currentModel!.name), \(error.localizedDescription)")
                         }
@@ -162,12 +163,12 @@ private extension WPDownloaderManager {
     func getCover(completion: @escaping () -> ()) {
         if currentModel == nil { return }
         
-        let FPS: Int = 20
+        let FPS: Int = 10
         let timeScale: CMTimeScale = 600
-        let imageDuration: TimeInterval = 2
+        let imageDuration: TimeInterval = 3
         let asset = AVAsset(url: currentModel!.fileUrl)
         let videoDuration = CMTimeGetSeconds(asset.duration)
-        let begin: TimeInterval = (currentModel?.duration)! * 0.5 - 1
+        let begin: TimeInterval = (currentModel?.duration)! * 0.5 - imageDuration / 2
         let count = FPS * Int(imageDuration) / 2
         var times = [NSValue]()
         
@@ -181,7 +182,7 @@ private extension WPDownloaderManager {
         
         generator?.cancel()
         generator = WLAssetImageGenerator(with: asset)
-        generator?.asyncGenerateImages(at: times, appendReverse: true, completion: { (images) in
+        generator?.asyncGenerateImages(at: times, appendReverse: false, completion: { (images) in
             
             let encoder = YYImageEncoder(type: .webP)
             encoder?.loopCount = 0

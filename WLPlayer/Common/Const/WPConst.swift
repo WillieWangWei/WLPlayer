@@ -34,3 +34,6 @@ var IS_FULL_SCREEN: Bool {
     }
     return false
 }
+
+let WPVideoDidDownloadedNotification: NSNotification.Name =
+    NSNotification.Name(rawValue: "WPVideoDidDownloadedNotification")

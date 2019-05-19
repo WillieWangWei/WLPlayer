@@ -37,7 +37,7 @@ private extension WPMainTabBarController {
     
     func initViewContollers() {
         
-        let vc1 = WPHomeViewController()
+        let vc1 = WPFileViewController()
         vc1.tabBarItem = UITabBarItem(title: "文件",
                                       image: #imageLiteral(resourceName: "sideslip_collect").withRenderingMode(.alwaysOriginal),
                                       selectedImage: #imageLiteral(resourceName: "videoRoom_comment_collect").withRenderingMode(.alwaysOriginal))

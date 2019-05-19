@@ -113,9 +113,32 @@ extension WLTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! WLTableViewCell
-        cell.selected(by: self, atIndexPath: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        let cellData = sourceData[indexPath.row]
+        cellDelegate?.onEvent(info: [
+            "event": "selecte",
+            "entity": cellData.entity,
+            ])
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let cellData = sourceData[indexPath.row]
+        return cellData.editingStyle != .none
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        let cellData = sourceData[indexPath.row]
+        return cellData.editingStyle
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        let cellData = sourceData[indexPath.row]
+        cellDelegate?.onEvent(info: [
+            "event": "edit",
+            "entity": cellData.entity,
+            ])
     }
 }
 

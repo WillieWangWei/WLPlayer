@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WPHomeViewController: UIViewController {
+class WPFileViewController: UIViewController {
     
     private lazy var tableView: WLTableView = {
         let tableView = WLTableView()
@@ -25,18 +25,14 @@ class WPHomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         fetchVideos()
+        addObserver()
     }
 }
 
 // MARK: - WLUIEventDelegate
 
-extension WPHomeViewController: WLUIEventDelegate {
+extension WPFileViewController: WLUIEventDelegate {
     
     func onEvent(info: [String : Any]) {
         
@@ -44,10 +40,18 @@ extension WPHomeViewController: WLUIEventDelegate {
         let entity = info["entity"]
         
         switch event {
-        case "selected":
+        case "select":
             guard let model = entity as? WPVideoModel else { return }
             WPPlayer.url = model.fileUrl
             WPPlayer.landscapeRight()
+        case "edit":
+            guard let model = entity as? WPVideoModel else { return }
+            do {
+                try WPVideoDBManager.shared.delete(model: model)
+                fetchVideos()
+            } catch {
+                WPHUD.error("删除失败: \(model.name)")
+            }
         default:
             break
         }
@@ -56,7 +60,7 @@ extension WPHomeViewController: WLUIEventDelegate {
 
 // MARK: - WLTableViewDelegate
 
-extension WPHomeViewController: WLTableViewDelegate {
+extension WPFileViewController: WLTableViewDelegate {
     
     func needLoadNewData(in tableView: WLTableView, completion: @escaping () -> Void) {
         fetchVideos()
@@ -69,7 +73,7 @@ extension WPHomeViewController: WLTableViewDelegate {
 
 // MARK: - prviate
 
-private extension WPHomeViewController {
+private extension WPFileViewController {
     
     func setupUI() {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -81,11 +85,29 @@ private extension WPHomeViewController {
                 WPHUD.error("无本地视频")
                 return
             }
-            tableView.sourceData = WLTableViewCellData.dataArrayWith(entities: videos, className: "WPVideoInfoCell")
+            tableView.sourceData = WLTableViewCellData.dataArrayWith(entities: videos,
+                                                                     className: "WPVideoInfoCell",
+                                                                     editingStyle: .delete)
             tableView.reloadData()
             tableView.refreshControl?.endRefreshing()
         } catch {
             WPHUD.error("读取本地视频数据库失败: \(error.localizedDescription)")
+        }
+    }
+    
+    func addObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onNotif(notif:)),
+                                               name: WPVideoDidDownloadedNotification,
+                                               object: nil)
+    }
+    
+    @objc func onNotif(notif: Notification) {
+        switch notif.name {
+        case WPVideoDidDownloadedNotification:
+            fetchVideos()
+        default:
+            break
         }
     }
 }

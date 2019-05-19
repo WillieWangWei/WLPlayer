@@ -51,6 +51,15 @@ extension WPVideoDBManager {
         return videos
     }
     
+    func delete(model: WPVideoModel) throws {
+        let fileManager = FileManager.default
+        try fileManager.removeItem(at: model.fileUrl)
+        if let coverUrl = model.coverUrl {
+            try fileManager.removeItem(at: coverUrl)
+        }
+        try database?.delete(fromTable: tableName, where: WPVideoModel.Properties.name == model.name)
+    }
+    
     func closeDB() {
         database?.close()
     }
