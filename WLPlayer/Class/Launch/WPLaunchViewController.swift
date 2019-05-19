@@ -24,7 +24,7 @@ class WPLaunchViewController: UIViewController {
         }
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        tapGR.numberOfTapsRequired = 4
+        tapGR.numberOfTapsRequired = 2
         touchView.addGestureRecognizer(tapGR)
     }
     

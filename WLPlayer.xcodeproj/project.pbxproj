@@ -44,6 +44,7 @@
 		36897F43228B0F1000221470 /* WPRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36897F31228B0F1000221470 /* WPRecommendCell.xib */; };
 		36897F44228B0F1000221470 /* WPPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F32228B0F1000221470 /* WPPlayerManager.swift */; };
 		36897F50228B138B00221470 /* WPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36897F4F228B138B00221470 /* WPHomeViewController.swift */; };
+		36F6A76E2291833D0043EA88 /* WLUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F6A76D2291833D0043EA88 /* WLUserNotificationCenter.swift */; };
 		8906B98E678E38D1370E9378 /* Pods_WLPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		36897F32228B0F1000221470 /* WPPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPPlayerManager.swift; sourceTree = "<group>"; };
 		36897F4A228B122600221470 /* WLPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WLPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		36897F4F228B138B00221470 /* WPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHomeViewController.swift; sourceTree = "<group>"; };
+		36F6A76D2291833D0043EA88 /* WLUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLUserNotificationCenter.swift; sourceTree = "<group>"; };
 		38908A87B9442792D6618DDB /* Pods-WLPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLPlayer.debug.xcconfig"; path = "Target Support Files/Pods-WLPlayer/Pods-WLPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		389CAE9E33E41FDA3C215523 /* Pods_WLPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74450B78A072D7E69BD4283B /* Pods-WLPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLPlayer.release.xcconfig"; path = "Target Support Files/Pods-WLPlayer/Pods-WLPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				365DD5C2228ED819008501CA /* WLAssetImageGenerator.swift */,
+				36F6A76D2291833D0043EA88 /* WLUserNotificationCenter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				36897F34228B0F1000221470 /* WPBaseNavigationController.swift in Sources */,
 				36897F35228B0F1000221470 /* SwiftyBeaver+WP.swift in Sources */,
 				365DD5BF228EBF2E008501CA /* WPVideoInfoCell.swift in Sources */,
+				36F6A76E2291833D0043EA88 /* WLUserNotificationCenter.swift in Sources */,
 				362FE8D4228C41B2001ED4B9 /* WPDownloaderManager.swift in Sources */,
 				36897EF8228B0E1500221470 /* WLTableViewDelegate.swift in Sources */,
 				36897EFB228B0E1500221470 /* WLTableViewOverlay.swift in Sources */,

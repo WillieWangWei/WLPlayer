@@ -119,6 +119,11 @@ private extension WPDownloaderManager {
                         do {
                             try WPVideoDB.insert(model: self.currentModel!)
                             WPHUD.succesee("写入数据库成功: \(self.currentModel!.name)")
+                            WLUserNotificationCenter.current.postNotification(
+                                title: "下载成功", body: "文件下载成功: \(self.currentModel!.name)")
+                            // 发推送
+                            // 删除
+                            // 下载进度
                         } catch {
                             WPHUD.error("写入数据库失败: \(self.currentModel!.name), \(error.localizedDescription)")
                         }
